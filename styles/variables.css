@@ -1,1 +1,39 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+
+:root {
+  /* Переменные для шрифтов */
+  --main-font: 'Inter', sans-serif;
+  --accent-font: 'PressStart2P-Regular', system-ui;
+  --main-font-weight: 400;
+  --title-font-weight: 700;
+  --text-color: #000000;
+  --button-text-color: #ffffff;
+
+  --bg-gradient: 
+    repeating-linear-gradient(
+      to right, 
+      #d3d3d3 0,
+      #d3d3d3 2px,
+      transparent 2px,
+      transparent 4px
+    ), 
+    repeating-linear-gradient(
+      to bottom, 
+      #d3d3d3 0,
+      #d3d3d3 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    linear-gradient(
+      to bottom,
+      #e7e7e7 0.01%,
+      #1a1a1a
+    );
+
+  --bg-color: #ffffff;
+  --accent-color: #000000;
+  --label-color: rgb(255 255 255 / 0.5);
+  --contour-color: #FF0000;
+
+  --container-width: clamp(375px, 100vw, 700px);
+}
