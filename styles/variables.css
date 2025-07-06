@@ -3,7 +3,7 @@
 :root {
   /* Переменные для шрифтов */
   --main-font: 'Inter', sans-serif;
-  --accent-font: 'PressStart2P-Regular', system-ui;
+  --accent-font: 'PPressStart2P', system-ui;
   --main-font-weight: 400;
   --title-font-weight: 700;
   --text-color: #000000;
