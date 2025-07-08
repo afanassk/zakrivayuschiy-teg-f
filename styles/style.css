@@ -87,6 +87,10 @@
   filter: saturate(120%);
 }
 
+.filter-brightness {
+  filter: brightness(90%);
+}
+
 .filter-sepia {
   filter: sepia(50%);
 }
@@ -97,6 +101,14 @@
 
 .filter-grayscale {
   filter: grayscale(80%);
+}
+
+.filter-opacity {
+  filter: opacity(0.9);
+}
+
+.filter-invert {
+  filter: invert(0.2);
 }
 
 .filter-blur {
