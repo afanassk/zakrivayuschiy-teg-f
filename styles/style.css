@@ -12,7 +12,7 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-family: var(--main-font, sans-serif);
+  font-family: var(--main-font), sans-serif;
   font-variation-settings: 'wght' var(--main-font-weight, 400);
   color: var(--text-color, #000000);
   background-image: 
@@ -30,7 +30,7 @@
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  font-family: var(--accent-font, system-ui);
+  font-family: var(--accent-font), fantasy;
   text-transform: uppercase;
   margin-block: 100px;
   padding-block: clamp(120px, 30vw, 128px);
@@ -54,12 +54,8 @@
   text-transform: uppercase;
 }
 
-.card__list {
+.card__block {
   font-size: 18px;
-  margin-block-end: 50px;
-}
-
-.card__item {
   margin-block-end: 50px;
 }
 
@@ -87,41 +83,30 @@
   outline-offset: -2px;
 }
 
-.img-girl-sits-back {
-  filter: saturate(80%);
-}
-
-.img-room {
+.filter-saturate {
   filter: saturate(120%);
 }
 
-.img-girl-amd-black-cat {
+.filter-sepia {
   filter: sepia(50%);
 }
 
-.img-moments {
+.filter-multy {
   filter: sepia(50%) contrast(70%);
 }
 
-.img-girl-sleep {
+.filter-grayscale {
   filter: grayscale(80%);
 }
 
-.img-coffee {
-  filter: saturate(150%);
-}
-
-.img-boy-and-girl {
-  filter: hue-rotate(-20deg) brightness(90%);
-}
-
-.img-cat {
+.filter-blur {
   filter: blur(0.05rem);
 }
 
 .card__image-label {
-  font-family: var(--accent-font, system-ui);
+  font-family: var(--accent-font), fantasy;
   font-size: 14px;
+  opacity: 0.5;
   text-transform: uppercase;
   position: absolute;
   inset-block-start: 27px;
@@ -154,6 +139,7 @@
 
 .card__text {
   font-variation-settings: 'wght' var(--main-font-weight, 400);
+  line-height: 21px;
 }
 
 .card__button {
@@ -172,11 +158,11 @@
   block-size: 38px;
   padding: 0px;
   cursor: pointer;
+  transition: border-color 0.3s ease;
 }
 
 .card__icon-button:focus-visible {
   border-color:  var(--accent-color, #000000);
-  transition: border-color 0.3s ease;
 }
 
 .card__icon-button:focus {
@@ -200,7 +186,6 @@
   position: absolute;
   inset: 0;
   background-color: var(--accent-color, #000000);
-  size: 100%;
   transform: scaleX(0);
   transition: transform 0.5s ease-in-out;
   transform-origin: left;
@@ -216,7 +201,7 @@
 }
 
 .button__text {
-  font-family: var(--accent-font, system-ui);
+  font-family: var(--accent-font), fantasy;
   font-size: 14px;
   color: var(--button-text-color, #ffffff);
   mix-blend-mode: difference;
@@ -249,26 +234,48 @@
   mix-blend-mode: difference;
 }
 
-#modal {
-  color: var(--accent-color, #000);
-  background-color: var(--bg-color, #FFF);
-  border: 2px solid var(--accent-color, #000);
+.dialog {
+  color: var(--accent-color, #000000);
+  background-color: var(--bg-color, #FFFFFF);
+  border: 2px solid var(--accent-color, #000000);
   padding: 30px;
 }
 
-#modal[open] {
+.dialog[open] {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 30px;
+  inline-size: 354px;
 }
 
-#modal::backdrop {
+.dialog::backdrop {
   background-color: rgb(0 0 0 / 0.75);
 } 
 
+.dialog__container {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 20px;
+ }
+
+ .dialog__icon {
+  block-size: 39px;
+  inline-size: 39px;
+ }
+
+.dialog__text {
+  font-family: var(--accent-font), fantasy;
+  font-size: 14px;
+  text-transform: uppercase;
+  line-height: 1.5;
+  width: fit-content;
+  max-width: 234px;
+}
+
 .dialog__form {
-  inline-size: 293px;
+  inline-size: 100%;
 }
 
 .dialog__button {
@@ -281,27 +288,7 @@
 }
 
 .dialog__button:focus-visible {
-  box-shadow: 2px 2px 0 var(--accent-color, #000);
-}
-
-.dialog__container {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  inline-size: 100%;
-  gap: 20px;
- }
-
-.dialog__icon {
-  block-size: 39px;
-  inline-size: 39px;
- }
-
-.dialog__text {
-  font-family: var(--accent-font, system-ui);
-  font-size: 14px;
-  text-transform: uppercase;
-  line-height: 1.5;
+  box-shadow: 2px 2px 0 var(--accent-color, #000000);
 }
 
 @media (width <= 375px) {
@@ -322,16 +309,16 @@
   }
 
   .floppy {
-  block-size: 28px;
-  inline-size: 28px;
+    block-size: 28px;
+    inline-size: 28px;
   }
 
-  #modal {
-    inline-size: 100%;
-    padding-inline: 42px;
+  .dialog {
+    padding-inline: 40px;
   }
 
-  .dialog__form {
-    inline-size: 100%;
+  .dialog__icon {
+    block-size: 39px;
+    inline-size: 39px;
   }
 }
