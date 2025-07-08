@@ -258,12 +258,12 @@
   justify-content: start;
   align-items: center;
   gap: 20px;
- }
+}
 
- .dialog__icon {
+.dialog__icon {
   block-size: 39px;
   inline-size: 39px;
- }
+}
 
 .dialog__text {
   font-family: var(--accent-font), fantasy;
